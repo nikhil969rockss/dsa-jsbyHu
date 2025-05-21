@@ -50,5 +50,3 @@ console.log(linked.pop());
 console.log(linked);
 
 // Pop--> Removing last node/element from the list by creating two temporary variable which pointing towards head. one will move forward iterating through each node by check if next is pointing towards a node or not.. until finds the last element which pointing towards null
-
-// prev = node , node = prev.next this loop until node.next then change the tail pointing to prev and then next to null
