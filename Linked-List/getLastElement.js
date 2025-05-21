@@ -4,7 +4,6 @@ class Node {
     this.next = null;
   }
 }
-
 class LinkedList {
   constructor(value) {
     this.head = new Node(value);
@@ -21,16 +20,26 @@ class LinkedList {
     this.tail = newNode;
     this.length++;
   }
-  getFirst() {
-    return this.head.value;
+  getLast() {
+    // return this.tail not a solution.. have to iterate from starting
+    let node = this.head;
+    if (!this.head) {
+      return null;
+    }
+    while (node) {
+      if (!node.next) {
+        return node;
+      }
+      node = node.next;
+    }
+    return null;
   }
 }
 const linked = new LinkedList(10);
-linked.push(140);
-linked.push(210);
-linked.push(220);
-
-// getFirst: Finding the first element/node from the list
-console.log(linked.getFirst());
-
+linked.push(20);
+linked.push(30);
 console.log(linked);
+console.log(linked.getLast());
+//console.log(linked);
+
+//getLast: Finding the last element/node from the list
